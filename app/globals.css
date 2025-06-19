@@ -1,26 +1,61 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: 'Inter', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  background: rgba(255,255,255,0.5);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+.promotion-swiper .swiper-pagination {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  ::-webkit-scrollbar{
+    height: 0px;
+  }
+
+  @layer base {
+  * {
+    @apply m-0 p-0 box-border;
+
+    ::-webkit-scrollbar {
+      @apply w-1.5 h-1.5 rounded-xl bg-gray-50;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      @apply rounded-full bg-gray-300;
+    }
+  }
+
+  body {
+    @apply w-screen min-h-screen overflow-y-auto overflow-x-hidden;
+
+    #root {
+      @apply flex flex-col flex-none w-full overflow-x-hidden;
+    }
+  }
 }
