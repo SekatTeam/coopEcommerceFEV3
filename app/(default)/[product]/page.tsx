@@ -14,13 +14,12 @@ import { PaymentMethod } from "@/app/constants/media";
 import { LiaAwardSolid } from "react-icons/lia";
 import { CiCreditCard1, CiDeliveryTruck } from "react-icons/ci";
 import { CgHeadset } from "react-icons/cg";
+import { useParams } from "next/navigation";
 
-interface Props {
-  params: { id: string };
-}
-
-export default function BestDealDetailPage({ params }: Props) {
-    const deal = bestDeals.find((d) => d.id.toString() === params.id);
+export default function Page() {
+    const params = useParams();
+    const id = params.product;
+    const deal = bestDeals.find((d) => d.id.toString() === id);
     if (!deal) return notFound();
     const [quantity, setQuantity] = useState(1);
     const sectionRef = useRef<HTMLDivElement>(null);
