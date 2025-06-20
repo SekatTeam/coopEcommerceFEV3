@@ -60,23 +60,14 @@ const Favourite: React.FC = () => {
     { label: "Printer", value: "printer" },
   ];
 
-  const isAllTab = activeTab?.value === "all";
-  const { data: categoryData, isLoading: isCategoryLoading, error: categoryError } = useProductsByCategory(
-    activeTab?.catName || "",
-    activeTab?.catId || ""
-  );
+  // Always show all products and make 'All Product' tab active and others inactive
+  const isAllTab = true;
+  const activeTabValue = 'all';
+  let products: any[] = data?.object || bestSelling;
+  const displayedProducts = products.slice(0, 8);
 
-  let products: any[] = bestSelling;
-  if (isAllTab) {
-    products = data?.object || bestSelling;
-  } else if (categoryData?.object) {
-    products = categoryData.object;
-  }
-  const filteredProducts = filterProducts(products, activeTab?.catName || "");
-  const displayedProducts = filteredProducts.slice(0, 8);
-
-  if (isLoading || isCategoryLoading || isCategoriesLoading) return <div>Loading favourite products...</div>;
-  if (error || categoryError) return <div>Failed to load favourite products.</div>;
+  if (isLoading || isCategoriesLoading) return <div>Loading favourite products...</div>;
+  if (error) return <div>Failed to load favourite products.</div>;
 
   return (
     <section className="py-8 font-PublicSans">
@@ -88,8 +79,8 @@ const Favourite: React.FC = () => {
               {TABS.map((tab) => (
                 <button
                   key={tab.value}
-                  onClick={() => setActiveTab(tab)}
-                  className={`text-sm border-b-2 px-1 pb-1 transition-colors duration-200 ${activeTab?.value === tab.value ? '[border:var(--main-color)] font-medium' : 'border-transparent text-gray-500 hover:[color:var(--main-color)]'}`}
+                  disabled
+                  className={`text-sm border-b-2 px-1 pb-1 transition-colors duration-200 ${tab.value === 'all' ? '[border:var(--main-color)] font-medium' : 'border-transparent text-gray-500'}`}
                 >
                   {tab.label}
                 </button>
@@ -97,7 +88,7 @@ const Favourite: React.FC = () => {
               <a href="#" className="ml-3 [color:var(--main-color)] font-medium flex items-center gap-1 text-sm font-publicSans">Browse All Product <span><FaArrowRight /></span></a>
             </div>
           </div>
-          <div className="hidden md:grid  md:grid-cols-3 lg:grid-cols-4 gap-2">
+          <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-2">
             {displayedProducts.map((deal: any) => (
               <Card
                 key={deal.itemID || deal.id}
@@ -112,8 +103,7 @@ const Favourite: React.FC = () => {
               />
             ))}
           </div>
-        </div>
-        <div className="md:hidden">
+          <div className="md:hidden">
             <Swiper
               className="block md:hidden"
               slidesPerView={2}
@@ -123,7 +113,6 @@ const Favourite: React.FC = () => {
                 prevEl: '.swiper-button-prev',
               }}
               style={{ width: '100%', height: '300px' }}
-
             >
               {displayedProducts.map((deal: any) => (
                 <SwiperSlide key={deal.itemID || deal.id}>
@@ -148,6 +137,7 @@ const Favourite: React.FC = () => {
               </button>
             </Swiper>
           </div>
+        </div>
         <div className="w-full lg:w-[30%]">
           <Banner />
         </div>

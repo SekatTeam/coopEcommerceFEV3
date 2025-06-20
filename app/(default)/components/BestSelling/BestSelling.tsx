@@ -57,23 +57,14 @@ const BestSelling: React.FC = () => {
     })),
   ];
 
-  const isAllTab = activeTab?.value === "all";
-  const { data: categoryData, isLoading: isCategoryLoading, error: categoryError } = useProductsByCategory(
-    activeTab?.catName || "",
-    activeTab?.catId || ""
-  );
+  // Always show all products and make 'All Product' tab active and others inactive
+  const isAllTab = true;
+  const activeTabValue = 'all';
+  let products: any[] = data?.object || bestSelling;
+  const displayedProducts = products.slice(0, 8);
 
-  let products: any[] = bestSelling;
-  if (isAllTab) {
-    products = data?.object || bestSelling;
-  } else if (categoryData?.object) {
-    products = categoryData.object;
-  }
-  const filteredProducts = filterProducts(products, activeTab?.catName || "");
-  const displayedProducts = filteredProducts.slice(0, 8);
-
-  if (isLoading || isCategoryLoading || isCategoriesLoading) return <div>Loading best selling products...</div>;
-  if (error || categoryError) return <div>Failed to load best selling products.</div>;
+  if (isLoading || isCategoriesLoading) return <div>Loading best selling products...</div>;
+  if (error) return <div>Failed to load best selling products.</div>;
 
   return (
     <section className="py-8 font-publicSans">
@@ -86,8 +77,8 @@ const BestSelling: React.FC = () => {
                 {TABS.map((tab) => (
                   <button
                     key={tab.value}
-                    onClick={() => setActiveTab(tab)}
-                    className={`text-xs font-normal border-b-2 px-1 pb-1 transition-colors duration-200 ${activeTab?.value === tab.value ? '[border:var(--main-color)] font-medium' : 'border-transparent text-gray-500 hover:[color:var(--main-color)]'}`}
+                    disabled
+                    className={`text-xs font-normal border-b-2 px-1 pb-1 transition-colors duration-200 ${tab.value === 'all' ? '[border:var(--main-color)] font-medium' : 'border-transparent text-gray-500'}`}
                   >
                     {tab.label}
                   </button>
@@ -120,7 +111,6 @@ const BestSelling: React.FC = () => {
                 prevEl: '.swiper-button-prev',
               }}
               style={{ width: '100%', height: '300px' }}
-
             >
               {displayedProducts.map((deal: any) => (
                 <SwiperSlide key={deal.itemID || deal.id}>
