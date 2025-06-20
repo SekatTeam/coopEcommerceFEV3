@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/navigation";
+import { getValidImageSrc } from "@/utils/getValidImage";
 
 interface BestDealCardProps {
   id: string;
@@ -60,7 +61,7 @@ const BestDealCard: React.FC<BestDealCardProps> = ({
       <Image
         height={100}
         width={100}
-        src={image}
+        src={getValidImageSrc(image)}
         alt={title}
         className={`w-full h-40 object-contain mb-4 rounded ${
           isSoldOut ? "opacity-50" : ""
@@ -68,19 +69,24 @@ const BestDealCard: React.FC<BestDealCardProps> = ({
       />
       <div className="flex-1 flex flex-col">
         <h3 className="text-xs mb-1">{title}</h3>
-        {description && (
+        {/* {description && (
           <p className="text-xs text-gray-500 mb-2">{description}</p>
-        )}
+        )} */}
         <div className="flex items-center gap-2">
-          {oldPrice && (
+          {oldPrice ? (
             <span className="text-gray-400 text-sm line-through">
               {currency}
-              {oldPrice}
+              {oldPrice === 0 ? 12000 : oldPrice}
+            </span>
+          )
+          :(
+            <span className="text-gray-400 text-sm line-through">
+              12090
             </span>
           )}
           <span className="text-orange-600 font-bold text-sm md:text-lg">
             {currency}
-            {price}
+            {price === 0 ? 10000 : price}
           </span>
         </div>
       </div>

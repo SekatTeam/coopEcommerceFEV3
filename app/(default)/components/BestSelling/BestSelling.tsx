@@ -7,6 +7,7 @@ import { bestSelling } from "@/app/constants/bestSelling";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useAllProducts } from "@/hooks/useAllProducts";
 
 const TABS = [
   { label: "All Product", value: "all" },
@@ -43,7 +44,14 @@ const filterProducts = (products: Product[], tab: string) => {
 
 const BestSelling: React.FC = () => {
   const [activeTab, setActiveTab] = useState("all");
-  const filteredProducts = filterProducts(bestSelling, activeTab);
+  const { data, isLoading, error } = useAllProducts();
+
+  if (isLoading) return <div>Loading best selling products...</div>;
+  if (error) return <div>Failed to load best selling products.</div>;
+
+  const products = data?.object || bestSelling;
+  const filteredProducts = filterProducts(products, activeTab);
+  const displayedProducts = filteredProducts.slice(0, 8);
 
   return (
     <section className="py-8 font-publicSans">
@@ -66,8 +74,19 @@ const BestSelling: React.FC = () => {
             </div>
           </div>
           <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-2">
-            {filteredProducts.map((deal: Product) => (
-              <Card key={deal.id} {...deal} />
+            {displayedProducts.map((deal: any) => (
+              <Card
+                key={deal.itemID || deal.id}
+                id={deal.itemID || deal.id}
+                title={deal.itemName || deal.title}
+                description={deal.itemDescription || deal.description}
+                price={deal.itemPrice || deal.price}
+                oldPrice={deal.itemTotalPrice || deal.oldPrice}
+                currency="₦"
+                image={deal.itemPicturePath || deal.image}
+                isSoldOut={deal.outstock > 0 || deal.isSoldOut}
+                // Add more props as needed
+              />
             ))}
           </div>
           <div className="md:hidden">
@@ -82,9 +101,19 @@ const BestSelling: React.FC = () => {
               style={{ width: '100%', height: '300px' }}
 
             >
-              {filteredProducts.map((deal: Product) => (
-                <SwiperSlide key={deal.id.toString()}>
-                  <Card key={deal.id} {...deal} />
+              {displayedProducts.map((deal: any) => (
+                <SwiperSlide key={deal.itemID || deal.id}>
+                  <Card
+                    key={deal.itemID || deal.id}
+                    id={deal.itemID || deal.id}
+                    title={deal.itemName || deal.title}
+                    description={deal.itemDescription || deal.description}
+                    price={deal.itemPrice || deal.price}
+                    oldPrice={deal.itemTotalPrice || deal.oldPrice}
+                    currency="₦"
+                    image={deal.itemPicturePath || deal.image}
+                    isSoldOut={deal.outstock > 0 || deal.isSoldOut}
+                  />
                 </SwiperSlide>
               ))}
               <button className="swiper-button-prev !w-[24px] !h-[24px] rounded-full after:hidden absolute left-[-10px] top-1/2 z-10 bg-orange-main">
