@@ -18,7 +18,8 @@ export default function Navbar() {
   const { data, isLoading } = useCompanyInfoAndBackgroundColor();
   const logo = data?.data?.companyInfo?.logo || logoIcon;
   const shortName = data?.data?.companyInfo?.shortName || "";
-  const mainColor = data?.data?.companyInfo?.mainColor || '#FF6600';
+  const mainColor = data?.data?.backGround?.mainColor || '#FF6600';
+  console.log("Company Info:", data?.data?.background);
 
   React.useEffect(() => {
     if (typeof window !== 'undefined' && mainColor) {
