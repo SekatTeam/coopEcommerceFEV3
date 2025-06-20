@@ -51,7 +51,7 @@ const Card: React.FC<CardProps> = ({
                   : tag === "SOLD OUT"
                   ? "bg-gray-400 text-white"
                   : tag === "BEST SALE"
-                  ? "bg-orange-main text-white"
+                  ? "[background:var(--main-color)] text-white"
                   : "bg-gray-200 text-gray-700"
               }`}
             >
@@ -90,7 +90,7 @@ const Card: React.FC<CardProps> = ({
               12090
             </span>
           )}
-          <span className="text-orange-600 font-bold text-lg">
+          <span className="text-[color:var(--main-color)]  font-bold text-lg">
             {currency}
             {price === 0 ? 10000 : price}
           </span>

@@ -7,7 +7,7 @@ export default function NotFound() {
       </p>
       <a
         href="/"
-        className="px-4 py-2 bg-orange-main text-white rounded hover:bg-orange-600 transition"
+        className="px-4 py-2 [background:var(--main-color)] text-white rounded hover:[background:var(--main-color)]/80 transition"
       >
         Go Home
       </a>

@@ -32,7 +32,7 @@ const ProductHighlight = () => {
           <div className="w-1/2 flex items-center justify-center relative">
             {item?.price && (
               <div className="flex items-center justify-end absolute top-0 right-0">
-                <div className="rounded-full h-20 w-20 text-white flex items-center justify-center bg-orange-main text-xl font-semibold my-3">
+                <div className="rounded-full h-20 w-20 text-white flex items-center justify-center bg-[color:var(--main-color)]  text-xl font-semibold my-3">
                   {item.price}
                 </div>
               </div>

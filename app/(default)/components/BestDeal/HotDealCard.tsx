@@ -78,7 +78,7 @@ const HotDealCard: React.FC<HotDealCardProps> = ({
                 {oldPrice}
               </span>
             )}
-            <span className="text-orange-600 font-bold text-lg">
+            <span className="text-[color:var(--main-color)]  font-bold text-lg">
               {currency}
               {price}
             </span>
@@ -89,7 +89,7 @@ const HotDealCard: React.FC<HotDealCardProps> = ({
         <button className="p-3 bg-[#FFE7D6] text-gray900rounded-[2px]">
           <HiHeart />
         </button>
-        <button className="py-2.5 px-4 flex items-center justify-center gap-2 text-white bg-orange-main rounded-[2px]">
+        <button className="py-2.5 px-4 flex items-center justify-center gap-2 text-white bg-[color:var(--main-color)]  rounded-[2px]">
           <MdOutlineShoppingCart className="" />
           <span className="text-sm">ADD TO CART</span>
         </button>

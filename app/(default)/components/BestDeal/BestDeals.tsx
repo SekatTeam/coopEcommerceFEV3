@@ -15,7 +15,6 @@ const BestDeals: React.FC = () => {
   if (isLoading) return <div>Loading best deals...</div>;
   if (error) return <div>Failed to load best deals.</div>;
 
-  // Use API data if available, fallback to static if not
   const deals = data?.object || bestDeals;
   const displayedDeals = deals.slice(0, 8);
 
@@ -26,7 +25,7 @@ const BestDeals: React.FC = () => {
           <h2 className="text-xl md:text-2xl font-semibold">Best Deals</h2>
           <span className="text-xs md:text-sm">Deals ends in <span className="bg-warning-color px-2 py-1 rounded-[2xp] font-semibold text-xs md:text-sm font-publicSans ml-2">16d : 21h : 57m : 23s</span></span>
         </div>
-        <a href="#" className="hidden text-orange-main font-medium md:flex items-center gap-1 text-xs font-publicSans">Browse All Product <span><FaArrowRight /></span></a>
+        <a href="#" className="hidden [color:var(--main-color)] font-medium md:flex items-center gap-1 text-xs font-publicSans">Browse All Product <span><FaArrowRight /></span></a>
       </div>
       <div className="flex flex-col md:flex-row gap-4 md:gap-0">
         {hotDeals.map((hotdeal) => (
@@ -72,10 +71,10 @@ const BestDeals: React.FC = () => {
                 />
               </SwiperSlide>
             ))}
-            <button className="swiper-button-prev !w-[24px] !h-[24px] rounded-full after:hidden absolute left-[-10px] top-1/2 z-10 bg-orange-main">
+            <button className="swiper-button-prev !w-[24px] !h-[24px] rounded-full after:hidden absolute left-[-10px] top-1/2 z-10 [background:var(--main-color)]">
               <FaArrowLeft className="text-white p-1 text-2xl" />
             </button>
-            <button className="swiper-button-next !w-[24px] !h-[24px] rounded-full after:hidden absolute right-[-10px] top-1/2 z-10 bg-orange-main">
+            <button className="swiper-button-next !w-[24px] !h-[24px] rounded-full after:hidden absolute right-[-10px] top-1/2 z-10 [background:var(--main-color)]">
               <FaArrowRight className="p-1 text-white text-2xl" />
             </button>
           </Swiper>

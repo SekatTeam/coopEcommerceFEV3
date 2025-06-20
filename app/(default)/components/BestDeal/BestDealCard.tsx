@@ -50,6 +50,8 @@ const BestDealCard: React.FC<BestDealCardProps> = ({
                   ? "bg-red-400 text-white"
                   : tag === "SOLD OUT"
                   ? "bg-gray-400 text-white"
+                  : tag === "BEST SALE"
+                  ? "[background:var(--main-color)] text-white"
                   : "bg-gray-200 text-gray-700"
               }`}
             >
@@ -84,7 +86,7 @@ const BestDealCard: React.FC<BestDealCardProps> = ({
               12090
             </span>
           )}
-          <span className="text-orange-600 font-bold text-sm md:text-lg">
+          <span className="[color:var(--main-color)] font-bold text-sm md:text-lg">
             {currency}
             {price === 0 ? 10000 : price}
           </span>

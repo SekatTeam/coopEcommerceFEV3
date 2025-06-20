@@ -48,10 +48,10 @@ const RecentlyAdded = () => {
                 </div> 
               </SwiperSlide>
             ))}
-            <button className="swiper-button-prev !w-[24px] !h-[24px] rounded-full after:hidden absolute left-[-18px] top-1/2 z-10 bg-orange-main">
+            <button className="swiper-button-prev !w-[24px] !h-[24px] rounded-full after:hidden absolute left-[-18px] top-1/2 z-10 bg-[color:var(--main-color)] ">
               <FaArrowLeft className="text-white p-1 text-2xl" />
             </button>
-            <button className="swiper-button-next !w-[24px] !h-[24px] rounded-full after:hidden absolute right-[-18px] top-1/2 z-10 bg-orange-main">
+            <button className="swiper-button-next !w-[24px] !h-[24px] rounded-full after:hidden absolute right-[-18px] top-1/2 z-10 bg-[color:var(--main-color)] ">
               <FaArrowRight className="p-1 text-white text-2xl" />
             </button>
           </Swiper>

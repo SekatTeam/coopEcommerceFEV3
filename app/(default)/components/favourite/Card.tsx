@@ -3,6 +3,7 @@ import React from "react";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { FashionImage5 } from "@/app/constants/media";
+import { getValidImageSrc } from "@/utils/getValidImage";
 
 
 interface CardProps {
@@ -52,7 +53,7 @@ const Card: React.FC<CardProps> = ({
                   : tag === "SOLD OUT"
                   ? "bg-gray-400 text-white"
                   : tag === "BEST SALE"
-                  ? "bg-orange-main text-white"
+                  ? "[background:var(--main-color)] text-white"
                   : "bg-gray-200 text-gray-700"
               }`}
             >
@@ -64,7 +65,7 @@ const Card: React.FC<CardProps> = ({
       <Image
         height={100}
         width={100}
-        src={image || FashionImage5}
+        src={getValidImageSrc(image)}
         alt={title}
         className={`w-full h-40 object-contain overflow-hidden mb-4 rounded ${isSoldOut ? "opacity-50" : ""}`}
       />
@@ -92,7 +93,7 @@ const Card: React.FC<CardProps> = ({
               12090
             </span>
           )}
-          <span className="text-orange-600 font-bold text-lg">
+          <span className="text-[color:var(--main-color)]  font-bold text-lg">
             {currency}
             {price === 0 ? 10000 : price}
           </span>

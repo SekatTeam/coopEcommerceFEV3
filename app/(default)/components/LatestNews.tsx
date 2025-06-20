@@ -49,14 +49,14 @@ const NewsCard = ({ newsImage, author, date, views, title, description }: any) =
       />
     )}
     <div className="flex items-center gap-4 text-sm mb-2">
-      <p className="flex items-center gap-1 text-xs md:text-sm text-[#475156]"><span className="text-orange-main text-base"><LuCircleUserRound /></span>{author}</p>
-      <p className="flex items-center gap-1 text-xs md:text-sm text-[#475156]"><span className="text-orange-main text-base"><MdEventNote /></span>{date}</p>
-      <p className="flex items-center gap-1 text-xs md:text-sm text-[#475156]"><span className="text-orange-main text-base"><IoChatbubbleEllipsesOutline /></span>{views}</p>
+      <p className="flex items-center gap-1 text-xs md:text-sm text-[#475156]"><span className="text-[color:var(--main-color)]  text-base"><LuCircleUserRound /></span>{author}</p>
+      <p className="flex items-center gap-1 text-xs md:text-sm text-[#475156]"><span className="text-[color:var(--main-color)]  text-base"><MdEventNote /></span>{date}</p>
+      <p className="flex items-center gap-1 text-xs md:text-sm text-[#475156]"><span className="text-[color:var(--main-color)]  text-base"><IoChatbubbleEllipsesOutline /></span>{views}</p>
     </div>
     <div className="font-semibold text-sm md:text-base mb-2 text-gray900">{title}</div>
     <div className="text-[#77878F] text-xs md:text-sm mb-4">{description}</div>
     <button className="border border-[#FFE7D6] text-[#FF7A00] rounded-sm px-4 py-2 text-xs md:text-sm font-semibold flex items-center gap-2 w-fit hover:bg-[#FF7A00]/10 transition">
-      READ MORE <span className="text-orange-main text-sm md:text-base"><FaArrowRight /></span>
+      READ MORE <span className="text-[color:var(--main-color)]  text-sm md:text-base"><FaArrowRight /></span>
     </button>
   </div>
 );
@@ -87,10 +87,10 @@ const LatestNews = () => (
               <NewsCard key={idx} {...news} />
             </SwiperSlide>
         ))}
-          <button className="swiper-button-prev !w-[24px] !h-[24px] rounded-full after:hidden absolute left-[-10px] top-1/2 z-10 bg-orange-main">
+          <button className="swiper-button-prev !w-[24px] !h-[24px] rounded-full after:hidden absolute left-[-10px] top-1/2 z-10 bg-[color:var(--main-color)] ">
             <FaArrowLeft className="text-white p-1 text-2xl" />
           </button>
-          <button className="swiper-button-next !w-[24px] !h-[24px] rounded-full after:hidden absolute right-[-10px] top-1/2 z-10 bg-orange-main">
+          <button className="swiper-button-next !w-[24px] !h-[24px] rounded-full after:hidden absolute right-[-10px] top-1/2 z-10 bg-[color:var(--main-color)] ">
             <FaArrowRight className="p-1 text-white text-2xl" />
           </button>
         </Swiper>

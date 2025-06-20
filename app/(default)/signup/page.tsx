@@ -21,7 +21,7 @@ export default function Signup() {
         <div className="min-h-screen flex items-center justify-center font-publicSans">
             <div className="flex flex-col md:flex-row overflow-hidden max-w-7xl w-full">
                 <div className="flex-1 pl-8 py-8 pr-8 md:pr-40 flex flex-col justify-center">
-                    <h2 className="text-2xl font-bold text-orange-main mb-2">Sign Up</h2>
+                    <h2 className="text-2xl font-bold [color:var(--main-color)] mb-2">Sign Up</h2>
                     <p className="mb-6 text-gray-700">Enter your email and password to sign up.</p>
                     <form className="space-y-4">
                     <div>
@@ -83,7 +83,7 @@ export default function Signup() {
                         type="checkbox"
                         checked={agree}
                         onChange={e => setAgree(e.target.checked)}
-                        className="accent-orange-main"
+                        className="accent-[var(--main-color)]"
                         />
                         <label className="text-sm">I agree with the Terms & Conditions</label>
                     </div>
@@ -92,11 +92,11 @@ export default function Signup() {
                         type="checkbox"
                         checked={newsletter}
                         onChange={e => setNewsletter(e.target.checked)}
-                        className="accent-orange-main"
+                        className="accent-[var(--main-color)]"
                         />
                         <label className="text-sm">I want to subscribe to the Newsletter</label>
                     </div>
-                    <button type="submit" className="w-full bg-orange-main text-white py-3 rounded font-semibold mt-2">Sign Up</button>
+                    <button type="submit" className="w-full [background:var(--main-color)] text-white py-3 rounded font-semibold mt-2">Sign Up</button>
                     </form>
                     <div className="flex items-center my-4">
                     <div className="flex-grow h-px bg-gray-200" />
@@ -109,7 +109,7 @@ export default function Signup() {
                     <button className="bg-gray-100 p-2 rounded-full"><span className="sr-only">X</span><svg width="18" height="18" fill="currentColor" className="text-black"><path d="M17.94 1.29a1 1 0 0 0-1.41 0l-6.53 6.53-6.53-6.53A1 1 0 0 0 1.29 2.7l6.53 6.53-6.53 6.53a1 1 0 1 0 1.41 1.41l6.53-6.53 6.53 6.53a1 1 0 0 0 1.41-1.41l-6.53-6.53 6.53-6.53a1 1 0 0 0 0-1.41z"/></svg></button>
                     </div>
                     <div className="text-center text-sm text-gray-600">
-                    Already have an account? <Link href="/login" className="text-orange-main font-medium">Sign in</Link>
+                    Already have an account? <Link href="/login" className="[color:var(--main-color)] font-medium">Sign in</Link>
                     </div>
                 </div>
                 <div className="flex-1 relative hidden md:flex items-center justify-center bg-gray-100">
@@ -123,7 +123,7 @@ export default function Signup() {
                     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-[#FFFFFFA6] px-4 py-6 rounded-lg shadow shadow-[#1E293B1A] text-center w-[90%] max-w-md">
                         <h3 className="text-lg md:text-xl font-semibold text-[#7B2D26] mb-2">SignUp / Login To Complete Your Order</h3>
                         <p className="text-gray-700 mb-2 text-sm">Designer curated collection of eyewear for special occasions.</p>
-                        <Link href="#" className="text-orange-main font-semibold flex items-center justify-center gap-1 hover:underline text-sm">
+                        <Link href="#" className="[color:var(--main-color)] font-semibold flex items-center justify-center gap-1 hover:underline text-sm">
                         Check it out <FaArrowRight className="inline-block" />
                         </Link>
                     </div>

@@ -77,7 +77,7 @@ export default function Hero() {
         </Swiper>
       </Box>
 
-      <div className='hidden md:block bg-orange-main min-w-[250px] max-w-[270px] rounded-t-2xl font-publicSans'>
+      <div className='hidden md:block bg-[color:var(--main-color)]  min-w-[250px] max-w-[270px] rounded-t-2xl font-publicSans'>
         <div className='flex items-center gap-4 p-4'>
           <p className='text-white text-2xl font-publicSans'>Latest Deals</p>
           <Badge colorScheme="yellow" borderRadius="full" px={2}>HOT</Badge>
@@ -95,7 +95,7 @@ export default function Hero() {
             <p className='line-through text-sm my-1'>NGN 18.95</p>
             <div className="flex items-center gap-5">
               <p className='text-base font-semibold'>NGN 13.95</p>
-              <button className='rounded-full py-1 px-2 bg-orange-main text-white text-sm'>-25%</button>
+              <button className='rounded-full py-1 px-2 bg-[color:var(--main-color)]  text-white text-sm'>-25%</button>
             </div>
           </div>
         </div>

@@ -25,7 +25,7 @@ const Promotion = () => {
             <SwiperSlide key={index}>
               <div className='flex gap-4 relative w-full px-2 md:px-8 py-3'>
                 <div className='w-full md:w-1/2 mt-3'>
-                  <p className="text-orange-main text-sm flex items-center gap-1"><BsDash size={20} /> THE BEST PLACE TO PLAY</p>
+                  <p className="text-[color:var(--main-color)]  text-sm flex items-center gap-1"><BsDash size={20} /> THE BEST PLACE TO PLAY</p>
                   <h2 className='text-2xl md:text-4xl font-bold my-6 text-gray900'>{item.title}</h2>
                   <p className='text-sm md:text-lg text-[#475156] !leading-[28px] mb-4 z-10 w-1/2 md:w-full'>{item.description}</p>
                   <ShopButton
@@ -36,7 +36,7 @@ const Promotion = () => {
                 </div>
                 <div className="hidden md:block w-full md:w-1/2 md:relative">
                   <div className="flex items-center justify-end absolute top-0 right-0">
-                    <div className="rounded-full border-[6px] border-white h-20 w-20 text-white flex items-center justify-center bg-orange-main text-xl font-semibold my-3">
+                    <div className="rounded-full border-[6px] border-white h-20 w-20 text-white flex items-center justify-center bg-[color:var(--main-color)]  text-xl font-semibold my-3">
                       {item.badgeText}
                     </div>
                   </div>
@@ -57,7 +57,7 @@ const Promotion = () => {
                       height={200}
                       className='object-cover'
                     />
-                    <div className="rounded-full border-[4px] absolute top-0 right-0 border-white h-16 w-16 md:h-20 md:w-20 text-white flex items-center justify-center bg-orange-main text-lg font-semibold my-3">
+                    <div className="rounded-full border-[4px] absolute top-0 right-0 border-white h-16 w-16 md:h-20 md:w-20 text-white flex items-center justify-center bg-[color:var(--main-color)]  text-lg font-semibold my-3">
                       {item.badgeText}
                     </div>
                   </div>
@@ -104,7 +104,7 @@ const Promotion = () => {
             />
             <div className='flex flex-col justify-center items-start'>
               <p className='text-lg md:text-xl !leading[32px] font-medium capitalize mr-4'>Super Amazing Handwash Liquid Shop</p>
-              <p className='text-orange-main text-xl !leading[32px] font-medium capitalize my-4'>N200</p>
+              <p className='text-[color:var(--main-color)]  text-xl !leading[32px] font-medium capitalize my-4'>N200</p>
               <ShopButton
                 marginY='my-2'
                 paddingX='px-3'
