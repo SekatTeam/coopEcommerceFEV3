@@ -8,7 +8,7 @@ export const Breadcrumbs = () => {
           className="flex items-center justify-center px-4 md:px-20"
         >
           <LiaHomeSolid />
-          <span className="text-orange-main text-sm">Home</span>
+          <span className="text-[color:var(--main-color)]  text-sm">Home</span>
         </BreadcrumbLink>
       </BreadcrumbItem>
       {/* Add more BreadcrumbItem as needed */}

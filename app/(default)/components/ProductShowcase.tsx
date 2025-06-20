@@ -101,7 +101,7 @@ const ProductShowcase = () => {
                 />
                 <div>
                   <div className="mb-2 text-sm">{item.title}</div>
-                  <div className="text-orange-main font-semibold">{item.price}</div>
+                  <div className="text-[color:var(--main-color)]  font-semibold">{item.price}</div>
                 </div>
               </div>
             ))}

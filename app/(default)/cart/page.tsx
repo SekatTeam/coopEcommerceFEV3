@@ -135,7 +135,7 @@ export default function Cart() {
                         >
                             <FaArrowLeft /> RETURN TO SHOP
                         </Link>
-                        <button className="text-xs md:text-base border border-orange-main text-black px-2 md:px-6 py-2 rounded font-medium hover:bg-orange-main hover:text-white transition">
+                        <button className="text-xs md:text-base border border-[color:var(--main-color)]  text-black px-2 md:px-6 py-2 rounded font-medium hover:bg-[color:var(--main-color)]  hover:text-white transition">
                             UPDATE CART
                         </button>
                     </div>
@@ -163,7 +163,7 @@ export default function Cart() {
                             <span className="text-gray900">Total</span>
                             <span className="text-gray900">N{total.toFixed(2)} NGN</span>
                         </div>
-                        <button className="w-full bg-orange-main text-white py-3 rounded font-semibold flex items-center justify-center gap-2 text-sm md:text-base">
+                        <button className="w-full bg-[color:var(--main-color)]  text-white py-3 rounded font-semibold flex items-center justify-center gap-2 text-sm md:text-base">
                             PROCEED TO CHECKOUT <FaArrowRight />
                         </button>
                     </div>
@@ -177,7 +177,7 @@ export default function Cart() {
                                 value={coupon}
                                 onChange={(e) => setCoupon(e.target.value)}
                             />
-                            <button className="bg-orange-main text-white px-2 md:px-4 py-2 rounded font-medium text-sm md:text-base">
+                            <button className="bg-[color:var(--main-color)]  text-white px-2 md:px-4 py-2 rounded font-medium text-sm md:text-base">
                                 APPLY COUPON
                             </button>
                         </div>

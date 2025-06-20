@@ -77,7 +77,7 @@ export default function Page() {
                             onClick={scrollLeft}
                             disabled={isAtStart}
                             className={`absolute left-0 z-10 p-2 rounded-full shadow-md ${
-                            isAtStart ? "bg-orange-100 cursor-not-allowed text-orange-main" : "bg-orange-200 hover:bg-orange-300 text-orange-main border-2 border-white"
+                            isAtStart ? "bg-orange-100 cursor-not-allowed [color:var(--main-color)]" : "bg-orange-200 hover:bg-orange-300 [color:var(--main-color)] border-2 border-white" 
                             }`}
                             style={{ top: "50%", transform: "translateY(-50%)" }}
                         >
@@ -98,7 +98,7 @@ export default function Page() {
                             onClick={scrollRight}
                             disabled={isAtEnd}
                             className={`absolute right-0 z-10 p-2 rounded-full shadow-md ${
-                            isAtEnd ? "bg-orange-100 cursor-not-allowed text-orange-main" : "bg-orange-200 hover:bg-orange-300 text-orange-main border-2 border-white"
+                            isAtEnd ? "bg-orange-100 cursor-not-allowed [color:var(--main-color)]" : "bg-orange-200 hover:bg-orange-300 [color:var(--main-color)] border-2 border-white" 
                             }`}
                             style={{ top: "50%", transform: "translateY(-50%)" }}
                         >
@@ -112,7 +112,7 @@ export default function Page() {
                             {Array.from({ length: 5 }, (_, index) => {
                                 const isActive = index < 5;
                                 const Star = isActive ? FaStar : FaRegStar;
-                                return <Star key={index} className="text-orange-700" />;
+                                return <Star key={index} className="text-[color:var(--main-color)] " />;
                             })}
                             <span className="text-xs md:text-sm text-gray900 font-medium md:ml-3">4.7 Star Rating</span>
                         </div>
@@ -138,7 +138,7 @@ export default function Page() {
                         </div>
                     </div>
                     <div className="flex items-center gap-2 my-3">
-                        <span className="text-orange-600 text-lg md:text-2xl font-publicSans font-semibold">₦{deal.price}</span>
+                        <span className="text-[color:var(--main-color)]  text-lg md:text-2xl font-publicSans font-semibold">₦{deal.price}</span>
                         {deal.oldPrice && <span className="line-through text-gray-400 ml-2">₦{deal.oldPrice}</span>}
                         {deal.tags && deal.tags.length > 0 && (
                         <span className="ml-2 bg-yellow-200 text-yellow-800 px-2 py-1 rounded text-xs font-semibold">{deal.tags[0]}</span>
@@ -148,7 +148,7 @@ export default function Page() {
                         <div>
                             <div className="font-semibold">Color</div>
                             <div className="flex gap-2 mt-2">
-                                <span className="w-6 h-6 rounded-full border-2 border-orange-500 inline-block bg-orange-200"></span>
+                                <span className="w-6 h-6 rounded-full border-2 border-[color:var(--main-color)]  inline-block bg-orange-200"></span>
                                 <span className="w-6 h-6 rounded-full border-2 border-gray-300 inline-block bg-gray-200"></span>
                             </div>
                         </div>
@@ -196,11 +196,11 @@ export default function Page() {
                               onClick={() => setQuantity((q) => q + 1)}
                             >+</button>
                         </div>
-                        <button className="col-span-2 py-2.5 px-2 md:px-4 flex items-center justify-center gap-2 text-white bg-orange-main rounded-[2px]">
+                        <button className="col-span-2 py-2.5 px-2 md:px-4 flex items-center justify-center gap-2 text-white [background:var(--main-color)] rounded-[2px]">
                             <MdOutlineShoppingCart className="" />
                             <span className="text-xs md:text-sm">ADD TO CART</span>
                         </button>
-                        <button className="col-span-4 md:col-span-1 border border-orange-500 text-orange-500 px-2 md:px-6 py-2 rounded text-xs md:text-sm">BUY NOW</button>
+                        <button className="col-span-4 md:col-span-1 border [border:var(--main-color)] [color:var(--main-color)] px-2 md:px-6 py-2 rounded text-xs md:text-sm">BUY NOW</button>
                     </div>
                     <div className="flex gap-4 mb-4">
                         <button className="text-gray-500 flex items-center justify-center gap-2 text-sm"><PiHeartStraightThin /> Add to Wishlist</button>
@@ -221,7 +221,7 @@ export default function Page() {
             </div>
             <div className="mt-10 bg-white rounded shadow-sm border border-border-color p-6 font-publicSans">
                 <div className="flex flex-wrap md:justify-center gap-4 md:gap-8 border-b pb-2 mb-4">
-                    <button className="border-b-2 border-orange-500 font-medium text-[10px] md:text-sm text-gray900">DESCRIPTION</button>
+                    <button className="border-b-2 border-[color:var(--main-color)] font-medium text-[10px] md:text-sm text-gray900">DESCRIPTION</button>
                     <button className="text-gray600 font-medium text-[10px] md:text-sm">ADDITIONAL INFORMATION</button>
                     <button className="text-gray600 font-medium text-[10px] md:text-sm">SPECIFICATION</button>
                     <button className="text-gray600 font-medium text-[10px] md:text-sm">REVIEW</button>
@@ -235,11 +235,11 @@ export default function Page() {
                 <div className="col-span-2 md:col-span-1">
                     <div className="font-medium text-base text-gray600 mb-2">Feature</div>
                     <div className="text-xs text-gray600">
-                        <span className="flex items-center"><span className="text-orange-main mr-2"><LiaAwardSolid size={20} /></span> Free 1 Year Warranty</span>
-                        <span className="flex items-center"><span className="text-orange-main mr-2"><CiDeliveryTruck size={20} /></span>Free Shipping & Fasted Delivery</span>
-                        <span className="flex items-center"><span className="text-orange-main mr-2"><PiHandshakeLight size={20} /></span>100% Money-back guarantee</span>
-                        <span className="flex items-center"><span className="text-orange-main mr-2"><CgHeadset size={20} /></span>24/7 Customer support</span>
-                        <span className="flex items-center"><span className="text-orange-main mr-2"><CiCreditCard1 size={20} /></span>Secure payment method</span>
+                        <span className="flex items-center"><span className="[color:var(--main-color)] mr-2"><LiaAwardSolid size={20} /></span> Free 1 Year Warranty</span>
+                        <span className="flex items-center"><span className="[color:var(--main-color)] mr-2"><CiDeliveryTruck size={20} /></span>Free Shipping & Fasted Delivery</span>
+                        <span className="flex items-center"><span className="[color:var(--main-color)] mr-2"><PiHandshakeLight size={20} /></span>100% Money-back guarantee</span>
+                        <span className="flex items-center"><span className="[color:var(--main-color)] mr-2"><CgHeadset size={20} /></span>24/7 Customer support</span>
+                        <span className="flex items-center"><span className="[color:var(--main-color)] mr-2"><CiCreditCard1 size={20} /></span>Secure payment method</span>
                     </div>
                 </div>
                 <div className="col-span-2 md:col-span-1">

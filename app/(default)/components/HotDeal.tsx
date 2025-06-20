@@ -20,7 +20,7 @@ const HotDeal = () => {
         </div>
         <div className="w-1/2 flex items-center justify-center relative">
             <div className="flex items-center justify-end absolute top-0 left-20">
-                <div className="rounded-full border-[6px] border-white h-20 w-20 text-black flex items-center justify-center bg-orange-main text-xl font-semibold my-3">
+                <div className="rounded-full border-[6px] border-white h-20 w-20 text-black flex items-center justify-center bg-[color:var(--main-color)]  text-xl font-semibold my-3">
                     N1999
                 </div>
             </div>

@@ -51,7 +51,7 @@ export default function MobileNavbar() {
             <Link href="#" className="flex items-center gap-3 px-6 py-2 text-gray-700 hover:bg-gray-100">
               <MdOutlinePayment size={20} /> Payments
             </Link>
-            <Link href="#" className="flex items-center gap-3 px-6 py-2 text-white bg-orange-main rounded-none">
+            <Link href="#" className="flex items-center gap-3 px-6 py-2 text-white [background:var(--main-color)] rounded-none">
               <FaRegListAlt size={20} /> Order Summary
             </Link>
             <Link href="#" className="flex items-center gap-3 px-6 py-2 text-gray-700 hover:bg-gray-100">

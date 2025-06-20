@@ -11,7 +11,7 @@ module.exports = {
     extend: {
         colors: { 
           "border-color": '#C4C4C4',
-          "orange-main": '#E57C29', 
+          "[color:var(--main-color)] ": '#E57C29', 
           "hover-color": "#00000033",
           "hover-shadow": "0px 8px 24px 0px",
           "warning-color": "#F3DE6D",
