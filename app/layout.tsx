@@ -3,6 +3,7 @@ import { Inter, Public_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import ChakraProvider from "./chakra-provider";
+import ReactQueryProvider from "./react-query-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,8 +31,10 @@ export default function RootLayout({
         className={`${inter.variable} ${publicSans.variable} antialiased`}
       >
         <ChakraProvider>
-          <Navbar />
-          <main>{children}</main>
+          <ReactQueryProvider>
+            <Navbar />
+            <main>{children}</main>
+          </ReactQueryProvider>
         </ChakraProvider>
       </body>
     </html>

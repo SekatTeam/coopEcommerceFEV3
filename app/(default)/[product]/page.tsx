@@ -185,7 +185,7 @@ export default function Page() {
                         </div>
                     </div>
                     <div className="grid grid-cols-4 gap-4 mb-4">
-                        <div className="col-span-2 md:col-span-1 border border-border-color">
+                        <div className="col-span-2 md:col-span-1 border border-border-color rounded-md flex items-center justify-between px-2 md:px-4">
                             <button
                               className="px-3 py-2 rounded text-xl"
                               onClick={() => setQuantity((q) => Math.max(1, q - 1))}

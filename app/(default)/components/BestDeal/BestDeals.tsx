@@ -1,5 +1,6 @@
 "use client"
 
+import { useHomePageProduct } from "@/hooks/useHomePageProduct";
 import { bestDeals } from "@/app/constants/bestDeals";
 import BestDealCard from "@/app/(default)/components/BestDeal/BestDealCard";
 import { hotDeals } from "@/app/constants/hotDeal";
@@ -9,7 +10,11 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const BestDeals: React.FC = () => {
-  
+  const { data, isLoading, error } = useHomePageProduct();
+
+  if (isLoading) return <div>Loading best deals...</div>;
+  if (error) return <div>Failed to load best deals.</div>;
+
   return (
     <section className="py-8">
       <div className="flex flex-col md:flex-row items-center justify-between mb-6">
