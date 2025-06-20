@@ -55,7 +55,7 @@ const NewsCard = ({ newsImage, author, date, views, title, description }: any) =
     </div>
     <div className="font-semibold text-sm md:text-base mb-2 text-gray900">{title}</div>
     <div className="text-[#77878F] text-xs md:text-sm mb-4">{description}</div>
-    <button className="border border-[#FFE7D6] text-[#FF7A00] rounded-sm px-4 py-2 text-xs md:text-sm font-semibold flex items-center gap-2 w-fit hover:bg-[#FF7A00]/10 transition">
+    <button className="border border-[#FFE7D6] text-[color:var(--main-color)]rounded-sm px-4 py-2 text-xs md:text-sm font-semibold flex items-center gap-2 w-fit hover:bg-[#FF7A00]/10 transition">
       READ MORE <span className="text-[color:var(--main-color)]  text-sm md:text-base"><FaArrowRight /></span>
     </button>
   </div>
