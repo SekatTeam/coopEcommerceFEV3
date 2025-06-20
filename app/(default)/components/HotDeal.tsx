@@ -7,7 +7,7 @@ const HotDeal = () => {
   return (
     <div className="bg-[#FFE7D6] flex gap-4 w-full px-8 py-3 rounded-md font-publicSans" >
         <div className='w-1/2 mt-7'>
-        <p className="text-sm flex items-center gap-1 px-3 py-1 rounded-sm w-max mb-2 bg-[#E57C29] text-white" >
+        <p className="text-sm flex items-center gap-1 px-3 py-1 rounded-sm w-max mb-2 bg-[color:var(--main-color)] text-white" >
             SAVE UP TO N200.00
         </p>
         <h2 className='text-3xl font-bold my-6 !leading-[24px] text-gray900'>Man Anthracite</h2>

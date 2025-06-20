@@ -53,11 +53,7 @@ const Favourite: React.FC = () => {
       value: cat.id,
       catName: cat.itemName,
       catId: cat.id,
-    })),
-    { label: "Keyboard & Mouse", value: "keyboard" },
-    { label: "Headphone", value: "headphone" },
-    { label: "Webcam", value: "webcam" },
-    { label: "Printer", value: "printer" },
+    }))
   ];
 
   // Always show all products and make 'All Product' tab active and others inactive
@@ -71,7 +67,7 @@ const Favourite: React.FC = () => {
 
   return (
     <section className="py-8 font-PublicSans">
-      <div className="flex flex-col md:flex-row gap-5 w-full">
+      <div className="flex flex-col md:flex-row gap-2 w-full">
         <div className="flex-1 lg:w-[70%]">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">FAVOURITE PRODUCTS</h2>
@@ -80,7 +76,7 @@ const Favourite: React.FC = () => {
                 <button
                   key={tab.value}
                   disabled
-                  className={`text-sm border-b-2 px-1 pb-1 transition-colors duration-200 ${tab.value === 'all' ? '[border:var(--main-color)] font-medium' : 'border-transparent text-gray-500'}`}
+                  className={`text-xs border-b-2 px-1 pb-1 transition-colors duration-200 ${tab.value === 'all' ? '[border:var(--main-color)] font-medium' : 'border-transparent text-gray-500'}`}
                 >
                   {tab.label}
                 </button>
