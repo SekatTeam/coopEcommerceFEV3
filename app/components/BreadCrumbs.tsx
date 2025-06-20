@@ -4,7 +4,9 @@ export const Breadcrumbs = () => {
   return (
     <Breadcrumb className='bg-[#F2F4F5] w-full p-4'>
       <BreadcrumbItem>
-        <BreadcrumbLink href="/" display="flex" alignItems="center" justifyContent="center" gap={2} px="20">
+        <BreadcrumbLink href="/"
+          className="flex items-center justify-center px-4 md:px-20"
+        >
           <LiaHomeSolid />
           <span className="text-orange-main text-sm">Home</span>
         </BreadcrumbLink>

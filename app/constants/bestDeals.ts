@@ -1,4 +1,4 @@
-import { BestDealImage1, BestDealImage2, BestDealImage3, BestDealImage4, BestDealImage5 } from "./media";
+import { BestDealImage3, BestDealImage4, BestDealImage5 } from "./media";
 
 export const bestDeals = [
   {
@@ -7,7 +7,7 @@ export const bestDeals = [
     oldPrice: null,
     price: 2300,
     currency: "N",
-    image: BestDealImage2,
+    image: BestDealImage5,
     rating: null,
     ratingCount: null,
     tags: ["SOLD OUT"],
@@ -55,7 +55,7 @@ export const bestDeals = [
     oldPrice: null,
     price: 299,
     currency: "N",
-    image: BestDealImage1,
+    image: BestDealImage3,
     rating: null,
     ratingCount: null,
     tags: [],
@@ -79,7 +79,7 @@ export const bestDeals = [
     oldPrice: null,
     price: 160,
     currency: "N",
-    image: BestDealImage2,
+    image: BestDealImage5,
     rating: null,
     ratingCount: null,
     tags: ["HOT"],

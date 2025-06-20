@@ -8,8 +8,14 @@ import { HiOutlineRefresh } from "react-icons/hi";
 import { FiUser } from "react-icons/fi";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import MobileNavbar from "./MobileNavbar";
 
 export default function Navbar() {
+  const [showMobileNav, setShowMobileNav] = React.useState(false);
+  // const MobileNavbar = dynamic(() => import("./MobileNavbar"), { ssr: false });
+
   return (
     <nav className="w-full flex items-center justify-between px-4 lg:px-20 py-3 border-b border-gray-200 bg-white">
       <div className="flex flex-col w-full md:hidden">
@@ -21,7 +27,14 @@ export default function Navbar() {
           />
           <div className="flex items-center justify-between mt-2">
             <div className="flex items-center gap-4">
-              <button className="text-3xl"><span className="block w-7 h-[2px] bg-gray-700 mb-1 rounded"></span><span className="block w-7 h-[2px] bg-gray-700 mb-1 rounded"></span><span className="block w-7 h-[2px] bg-gray-700 rounded"></span></button>
+              {/* <MobileNavbar /> */}
+            <button className="text-3xl" 
+              // onClick={() => setOpen((v) => !v)}
+            >
+              <span className="block w-7 h-[2px] bg-gray-700 mb-1 rounded"></span>
+              <span className="block w-7 h-[2px] bg-gray-700 mb-1 rounded"></span>
+              <span className="block w-7 h-[2px] bg-gray-700 rounded"></span>
+            </button>
               <button className="text-lg"><BsSearch /></button>
             </div>
             <div className="flex items-center gap-4">
@@ -29,12 +42,15 @@ export default function Navbar() {
               <HiOutlineRefresh size={24} className="text-[#7B7B7B]" />
               <FiUser size={24} className="text-[#7B7B7B]" />
               <div className="relative">
-                <MdOutlineShoppingCart size={24} className="text-[#7B7B7B]" />
-                <div className="absolute -top-1 -right-2 text-xs bg-orange-main text-white h-4 w-4 rounded-full flex items-center justify-center">0</div>
+                <Link href="/cart">
+                  <MdOutlineShoppingCart size={24} className="text-[#7B7B7B] cursor-pointer" />
+                  <div className="absolute -top-1 -right-2 text-xs bg-orange-main text-white h-4 w-4 rounded-full flex items-center justify-center">0</div>
+                </Link>
               </div>
               <Image src={user} width={24} height={24} alt="User" className="rounded-full object-cover" />
             </div>
           </div>
+          {showMobileNav && <MobileNavbar />}
       </div>
       <div className="hidden md:flex w-full items-center justify-between">
         <Image 
@@ -66,13 +82,17 @@ export default function Navbar() {
               <HiOutlineRefresh size={24} className="font-normal" />
           </div>
           <div className="flex flex-col items-center text-base font-medium gap-2 text-black cursor-pointer">
-              Account
-              <FiUser size={24} className="font-normal" />
+              <Link href="/login" className="flex flex-col items-center gap-2">
+                Account
+                <FiUser size={24} className="font-normal" />
+              </Link>
           </div>
           <div className="flex flex-col items-center text-base font-medium gap-2 text-black cursor-pointer relative">
-              Cart
-              <MdOutlineShoppingCart size={24} className="font-normal" />
-              <div className="absolute -top-2 right-0 text-base font-medium gap-2 bg-orange-main text-white h-4 w-4 rounded-full flex items-center justify-center">0</div>
+              <Link href="/cart" className="flex flex-col items-center gap-2">
+                Cart
+                <MdOutlineShoppingCart size={24} className="font-normal" />
+                <div className="absolute -top-2 right-0 text-base font-medium gap-2 bg-orange-main text-white h-4 w-4 rounded-full flex items-center justify-center">0</div>
+              </Link>
           </div>
         </div>
       </div>

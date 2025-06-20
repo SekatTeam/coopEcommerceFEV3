@@ -1,8 +1,6 @@
 export { default as logoIcon } from "../assets/icons/8f5e3eb1-b910-4f80-92a3-aaff252290a5 1.svg";
 export { default as HeroImage1 } from "../assets/images/Rectangle 7.png";
 export { default as BannerProductImg } from "../assets/images/Image.svg";
-export { default as BestDealImage1 } from "../assets/images/Image 5 (1).png";
-export { default as BestDealImage2 } from "../assets/images/Image 6.svg";
 export { default as BestDealImage3 } from "../assets/images/Image (2).svg";
 export { default as BestDealImage4 } from "../assets/images/Image (1).svg";
 export { default as BestDealImage5 } from "../assets/images/Image (3).svg";
@@ -33,4 +31,5 @@ export { default as AppleIcon } from "../assets/images/footer/image 11.svg"
 export { default as GoogleIcon } from "../assets/images/footer/image 10.svg"
 export { default as Hotdeal } from "../assets/images/Image (8).svg"
 export { default as PaymentMethod } from "../assets/images/Payment Method.svg"
-export { default as user } from "../assets/images/Frame 480965924.png"
+export { default as user } from "../assets/images/Frame 480965924.png";
+export { default as LoginImage } from "../assets/images/Mask group.png";
